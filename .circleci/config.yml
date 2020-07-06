@@ -5,10 +5,16 @@ jobs:
       - image: "crazyuploader/kernel_build:latest"
     steps:
       - run:
-          name: Building Kernel
+          name: Cloning Repository
           command: |
             git clone --depth=1 https://github.com/crazyuploader/Whyred-Kernel.git -b kernel-eas
             cd Whyred-Kernel || exit 1
-            curl -sO https://raw.githubusercontent.com/crazyuploader/Bash/master/kbuild.sh
-            bash kbuild.sh "whyred-newcam_defconfig"
-            bash kbuild.sh "whyred-oldcam_defconfig"
+      - run:
+          name: Getting Build Script
+          command: curl -sO https://raw.githubusercontent.com/crazyuploader/Bash/master/kbuild.sh
+      - run:
+          name: Build Kernel for New-Cam
+          command: bash kbuild.sh "whyred-newcam_defconfig"
+      - run:
+          name: Build Kernel for Old-Cam
+          command: bash kbuild.sh "whyred-oldcam_defconfig"
