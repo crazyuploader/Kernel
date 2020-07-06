@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: "crazyuploader/kernel_build:latest"
     steps:
-      - checkout
       - run:
           name: Building Kernel
           command: |
