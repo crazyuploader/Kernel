@@ -10,7 +10,9 @@ jobs:
             git clone --depth=1 https://github.com/crazyuploader/Whyred-Kernel.git -b kernel-eas
       - run:
           name: Getting Build Script
-          command: curl -sO https://raw.githubusercontent.com/crazyuploader/Bash/master/kbuild.sh
+          command: |
+            cd Whyred-Kernel || exit 1
+            curl -sO https://raw.githubusercontent.com/crazyuploader/Bash/master/kbuild.sh
       - run:
           name: Build Kernel for New-Cam
           command: |
