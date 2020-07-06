@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: "crazyuploader/kernel_build:latest"
+    steps:
+      - run:
+          name: Building Kernel
+          command: |
+            git clone --depth=1 https://github.com/crazyuploader/Whyred-Kernel.git -b kernel-eas-oc
+            cd Whyred-Kernel || exit 1
+            curl -sO https://raw.githubusercontent.com/crazyuploader/Bash/master/kbuild.sh
+            bash kbuild.sh "whyred-newcam_defconfig"
+            bash kbuild.sh "whyred-oldcam_defconfig"
