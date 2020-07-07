@@ -5,8 +5,8 @@
 # Variables
 GITHUB_REF="github.com/crazyuploader/Whyred-Kernel.git"
 
-git config user.email "49350241+crazyuploader@users.noreply.github.com"
-git config user.name "crazyuploader"
+git config --global user.email "49350241+crazyuploader@users.noreply.github.com"
+git config --global user.name "crazyuploader"
 git clone "https://${GITHUB_REF}" kernel
 cd kernel || exit 1
 
