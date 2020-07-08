@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: "python:latest"
+    steps:
+      - run:
+          name: Speed
+          command: |
+            curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
