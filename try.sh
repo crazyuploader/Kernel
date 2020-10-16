@@ -3,7 +3,7 @@
 # Kernel Auto Upstream
 
 # Variables
-GITHUB_REF="github.com/crazyuploader/Whyred-Kernel.git"
+GITHUB_REF="github.com/crazyuploader/Kernel.git"
 
 git config --global user.email "49350241+crazyuploader@users.noreply.github.com"
 git config --global user.name "crazyuploader"
